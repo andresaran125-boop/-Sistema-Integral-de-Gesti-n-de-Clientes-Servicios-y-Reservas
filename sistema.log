@@ -1,0 +1,1 @@
+2026-04-29 22:17:19,833 - ERROR - TypeError: ReservaSala.__init__() missing 2 required positional arguments: 'capacidad' and 'horas'
