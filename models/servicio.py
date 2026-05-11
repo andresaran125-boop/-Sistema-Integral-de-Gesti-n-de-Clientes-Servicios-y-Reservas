@@ -1,83 +1,52 @@
-<<<<<<< HEAD
-class Servicio:
-    def __init__(self, id, nombre, precio_base):
+from abc import ABC, abstractmethod
+
+class Servicio(ABC):
+    def __init__(self, id: int, nombre: str, costo_base: float):
         self.id = id
         self.nombre = nombre
-        self.precio_base = float(precio_base)  # <- Convierte a número sí o sí
-    
-    def calcular_costo(self, horas, impuesto=0, descuento=0):
-        pass
-    
-    def __str__(self):
-        return f"{self.nombre} - ID: {self.id} - Precio base: ${self.precio_base:,.0f}"
-=======
-from abc import ABC, abstractmethod
-from .entidad import Entidad
-from exceptions import ServicioNoDisponibleError
+        self.costo_base = costo_base
 
-class Servicio(Entidad, ABC):
-    """Clase abstracta para todos los servicios"""
-    
-    def __init__(self, id, nombre, costo_base):
-        super().__init__(id, nombre)
-        if costo_base <= 0:
-            raise ServicioNoDisponibleError("El costo debe ser mayor a 0")
-        self._costo_base = costo_base
-    
-    @property
-    def costo_base(self):
-        return self._costo_base
-    
     @abstractmethod
-    def calcular_precio_final(self):
+    def calcular_costo(self) -> float:
+        pass
+
+    @abstractmethod
+    def mostrar_info(self) -> str:
         pass
 
 class ReservaSala(Servicio):
-    def __init__(self, id, nombre, costo_base, capacidad, horas):
+    def __init__(self, id: int, nombre: str, costo_base: float, capacidad: int, horas: int):
         super().__init__(id, nombre, costo_base)
-        if capacidad <= 0 or horas <= 0:
-            raise ServicioNoDisponibleError("Capacidad y horas deben ser > 0")
-        self._capacidad = capacidad
-        self._horas = horas
-    
-    def calcular_precio_final(self):
-        if self._capacidad > 50:
-            return self._costo_base * self._horas * 1.2
-        return self._costo_base * self._horas
-    
-    def mostrar_info(self):
-        return f"Sala #{self._id} | {self._nombre} | Cap: {self._capacidad} | {self._horas}h | ${self.calcular_precio_final()}"
+        self.capacidad = capacidad
+        self.horas = horas
+
+    def calcular_costo(self) -> float:
+        return self.costo_base * self.horas
+
+    def mostrar_info(self) -> str:
+        return f"Sala: {self.nombre} - Capacidad: {self.capacidad} - ${self.calcular_costo():,.0f} por {self.horas}h"
 
 class AlquilerEquipo(Servicio):
-    def __init__(self, id, nombre, costo_base, dias):
+    def __init__(self, id: int, nombre: str, costo_base: float, dias: int):
         super().__init__(id, nombre, costo_base)
-        if dias <= 0:
-            raise ServicioNoDisponibleError("Los días deben ser > 0")
-        self._dias = dias
-    
-    def calcular_precio_final(self):
-        if self._dias > 7:
-            return self._costo_base * self._dias * 0.9
-        return self._costo_base * self._dias
-    
-    def mostrar_info(self):
-        return f"Equipo #{self._id} | {self._nombre} | {self._dias} días | ${self.calcular_precio_final()}"
+        self.dias = dias
+
+    def calcular_costo(self) -> float:
+        return self.costo_base * self.dias
+
+    def mostrar_info(self) -> str:
+        return f"Equipo: {self.nombre} - ${self.calcular_costo():,.0f} por {self.dias} días"
 
 class AsesoriaEspecializada(Servicio):
-    def __init__(self, id, nombre, costo_base, horas, es_urgente=False):
+    def __init__(self, id: int, nombre: str, costo_base: float, horas: int, es_virtual: bool):
         super().__init__(id, nombre, costo_base)
-        if horas <= 0:
-            raise ServicioNoDisponibleError("Las horas deben ser > 0")
-        self._horas = horas
-        self._es_urgente = es_urgente
-    
-    def calcular_precio_final(self):
-        precio = self._costo_base * self._horas
-        if self._es_urgente:
-            precio *= 1.5
-        return precio
-    
-    def mostrar_info(self):
-        urgencia = "URGENTE" if self._es_urgente else "Normal"
-        return f"Asesoría #{self._id} | {self._nombre} | {self._horas}h | {urgencia} | ${self.calcular_precio_final()}"
->>>>>>> 84aaa0fd267b485a5bfdd2bf9238119ee604ff9d
+        self.horas = horas
+        self.es_virtual = es_virtual
+
+    def calcular_costo(self) -> float:
+        recargo = 0.9 if self.es_virtual else 1.0
+        return self.costo_base * self.horas * recargo
+
+    def mostrar_info(self) -> str:
+        tipo = "Virtual" if self.es_virtual else "Presencial"
+        return f"Asesoría: {self.nombre} - {tipo} - ${self.calcular_costo():,.0f} por {self.horas}h"

@@ -1,0 +1,12 @@
+2026-04-29 22:17:19,833 - ERROR - TypeError: ReservaSala.__init__() missing 2 required positional arguments: 'capacidad' and 'horas'
+2026-05-03 19:40:53,701 - ERROR - TypeError: '<' not supported between instances of 'int' and 'datetime.datetime'
+2026-05-03 19:43:02,357 - ERROR - TypeError: '<' not supported between instances of 'int' and 'datetime.datetime'
+2026-05-03 19:47:52,881 - ERROR - DatoInvalidoError: Email inválido
+2026-05-03 19:47:52,882 - ERROR - ServicioNoDisponibleError: Servicio no disponible para pruebas
+2026-05-03 19:50:14,635 - ERROR - DatoInvalidoError: Email inválido
+2026-05-03 19:50:14,637 - ERROR - ServicioNoDisponibleError: Servicio no disponible para pruebas
+2026-05-03 19:50:39,974 - ERROR - DatoInvalidoError: Email inválido
+2026-05-03 19:50:39,977 - ERROR - ServicioNoDisponibleError: Prueba de servicio no disponible
+2026-05-03 20:14:45,346 - ERROR - ReservaInvalidaError: La fecha no puede ser en el pasado
+2026-05-03 20:20:41,594 - ERROR - ReservaInvalidaError: La fecha no puede ser en el pasado
+2026-05-11 10:36:30,170 - ERROR - AttributeError: 'ReservaSala' object has no attribute 'costo'
