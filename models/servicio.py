@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+class Servicio:
+    def __init__(self, id, nombre, precio_base):
+        self.id = id
+        self.nombre = nombre
+        self.precio_base = float(precio_base)  # <- Convierte a número sí o sí
+    
+    def calcular_costo(self, horas, impuesto=0, descuento=0):
+        pass
+    
+    def __str__(self):
+        return f"{self.nombre} - ID: {self.id} - Precio base: ${self.precio_base:,.0f}"
+=======
 from abc import ABC, abstractmethod
 from .entidad import Entidad
 from exceptions import ServicioNoDisponibleError
@@ -67,3 +80,4 @@ class AsesoriaEspecializada(Servicio):
     def mostrar_info(self):
         urgencia = "URGENTE" if self._es_urgente else "Normal"
         return f"Asesoría #{self._id} | {self._nombre} | {self._horas}h | {urgencia} | ${self.calcular_precio_final()}"
+>>>>>>> 84aaa0fd267b485a5bfdd2bf9238119ee604ff9d
