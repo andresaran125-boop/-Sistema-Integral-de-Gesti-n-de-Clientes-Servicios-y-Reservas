@@ -1,0 +1,47 @@
+=== LOG SOFTWARE FJ ===
+=== Inicio: 2026-05-01 01:25:02 ===
+
+[2026-05-01 01:25:02] [INFO] ====== INICIO DEL SISTEMA SOFTWARE FJ ======
+[2026-05-01 01:25:02] [INFO] Cliente creado: CLI-0001 - Ana Martínez
+[2026-05-01 01:25:02] [INFO] Cliente creado: CLI-0002 - Carlos Ruiz
+[2026-05-01 01:25:02] [ERROR] Error al crear cliente 'Pedro Inválido': [ERR_VALIDACION] Campo 'email' con valor 'correo_sin_arroba': Formato inválido
+[2026-05-01 01:25:02] [INFO] Cliente creado: CLI-0003 - Tecnología Global
+[2026-05-01 01:25:02] [INFO] Servicio: SRV-SAL-1076 - Sala Ejecutiva A
+[2026-05-01 01:25:02] [INFO] Servicio: SRV-PAQ-2675 - Paquete Laptops
+[2026-05-01 01:25:02] [INFO] Servicio: SRV-ASE-2339 - Asesoría Desarrollo
+[2026-05-01 01:25:02] [INFO] Reserva creada: RES-0001 | Ana Martínez | Sala Ejecutiva A | Total: $380,800.00
+[2026-05-01 01:25:02] [INFO] Intento de reserva para 'Ana Martínez' procesado.
+[2026-05-01 01:25:02] [ÉXITO] [RES-0001] Confirmada para 'Ana Martínez'.
+[2026-05-01 01:25:02] [INFO] [RES-0001] Operación 'confirmar' ejecutada.
+[2026-05-01 01:25:02] [INFO] Reserva creada: RES-0002 | Carlos Ruiz | Asesoría Desarrollo | Total: $1,827,840.00
+[2026-05-01 01:25:02] [INFO] Intento de reserva para 'Carlos Ruiz' procesado.
+[2026-05-01 01:25:02] [ÉXITO] [RES-0002] Confirmada para 'Carlos Ruiz'.
+[2026-05-01 01:25:02] [INFO] [RES-0002] Operación 'confirmar' ejecutada.
+[2026-05-01 01:25:02] [ÉXITO] [RES-0002] Completada. Costo: $1,827,840.00
+[2026-05-01 01:25:02] [ERROR] No se pudo crear reserva para 'Tecnología Global': [ERR_SERVICIO] El servicio 'Paquete Laptops' no está disponible actualmente.
+[2026-05-01 01:25:02] [INFO] Intento de reserva para 'Tecnología Global' procesado.
+[2026-05-01 01:25:02] [ERROR] No se pudo crear reserva para 'Ana Martínez': [ERR_VALIDACION] Campo 'duracion_horas' con valor '48': Duración fuera del rango para 'Sala Ejecutiva A'
+[2026-05-01 01:25:02] [INFO] Intento de reserva para 'Ana Martínez' procesado.
+[2026-05-01 01:25:02] [INFO] Reserva creada: RES-0003 | Tecnología Global | Sala Ejecutiva A | Total: $190,400.00
+[2026-05-01 01:25:02] [INFO] Intento de reserva para 'Tecnología Global' procesado.
+[2026-05-01 01:25:02] [ADVERTENCIA] [RES-0003] Cancelada por 'Tecnología Global'.
+[2026-05-01 01:25:02] [ERROR] [RES-0002] Cancelación fallida: [ERR_RESERVA] No se puede cancelar la reserva 'RES-0002' porque está en estado 'completada'.
+[2026-05-01 01:25:02] [ERROR] Error al crear cliente '': [ERR_VALIDACION] Campo 'nombre' con valor '': No puede estar vacío
+[2026-05-01 01:25:02] [INFO] ====== FIN DEL SISTEMA SOFTWARE FJ ======
+[2026-05-02 21:17:02] Error inesperado: Sala.calcular_costo() got an unexpected keyword argument 'impuesto'
+[2026-05-02 21:21:24] Error inesperado: Sala.calcular_costo() got an unexpected keyword argument 'descuento'
+[2026-05-02 21:23:36] Error inesperado: Sala.calcular_costo() got an unexpected keyword argument 'descuento'
+[2026-05-02 21:27:02] Error inesperado: Reserva.__init__() takes 4 positional arguments but 6 were given
+[2026-05-02 21:34:08] Error inesperado: 'Reserva' object has no attribute 'id'
+[2026-05-02 21:36:47] Reserva creada: 1 - Total: $-2379762000.0
+[2026-05-02 21:36:47] Reserva creada: 2 - Total: $-892321500.0
+[2026-05-02 21:36:47] Reserva creada: 3 - Total: $-11423428800.0
+[2026-05-02 21:36:47] Reserva creada: 4 - Total: $95200.0
+[2026-05-02 21:36:47] Reserva creada: 5 - Total: $-1665833400.0
+[2026-05-02 21:36:47] Reserva creada: 6 - Total: $357000.0
+[2026-05-02 21:36:47] Reserva creada: 8 - Total: $-5354643000.0
+[2026-05-02 21:36:47] Reserva creada: 9 - Total: $59500.0
+[2026-05-02 21:36:47] Reserva creada: 10 - Total: $-1427714400.0
+[2026-05-02 21:44:13] Reserva creada: 1 - Total: $-3952.4
+[2026-05-02 21:44:13] Error inesperado: can't multiply sequence by non-int of type 'float'
+[2026-05-02 21:46:23] Error inesperado: could not convert string to float: 'Sala A'
